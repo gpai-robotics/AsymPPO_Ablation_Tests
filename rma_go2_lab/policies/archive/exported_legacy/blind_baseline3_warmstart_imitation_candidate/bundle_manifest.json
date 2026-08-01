@@ -1,0 +1,18 @@
+{
+  "control_rate_hz": 50.0,
+  "deployable_observation_groups": [
+    "policy"
+  ],
+  "exported_artifacts": [
+    "blind_baseline3_warmstart_imitation_candidate.torchscript.pt",
+    "blind_baseline3_warmstart_imitation_candidate.export_metadata.json",
+    "blind_baseline3_warmstart_imitation_candidate.deploy_config.json"
+  ],
+  "freeze_note": "rma_go2_lab/policies/blind_baseline3_warmstart_imitation_final.md",
+  "latent_update_semantics": "",
+  "phase": "blind-baseline3-warmstart-imitation",
+  "policy_kind": "blind_fixed_policy",
+  "policy_name": "blind_baseline3_warmstart_imitation_candidate",
+  "source_checkpoint": "/home/bhuvan/projects/rma/rma_go2_lab/rma_go2_lab/policies/blind_baseline3_warmstart_imitation_final.pt",
+  "task": "RMA-Go2-Blind-Baseline-Rough-WarmStart-Imitation"
+}

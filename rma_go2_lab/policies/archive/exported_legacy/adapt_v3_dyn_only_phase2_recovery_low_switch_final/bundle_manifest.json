@@ -1,0 +1,19 @@
+{
+  "control_rate_hz": 50.0,
+  "deployable_observation_groups": [
+    "policy",
+    "policy_history"
+  ],
+  "exported_artifacts": [
+    "adapt_v3_dyn_only_phase2_recovery_low_switch_final.torchscript.pt",
+    "adapt_v3_dyn_only_phase2_recovery_low_switch_final.export_metadata.json",
+    "adapt_v3_dyn_only_phase2_recovery_low_switch_final.deploy_config.json"
+  ],
+  "freeze_note": "rma_go2_lab/policies/adapt_v3_dyn_only_phase2_recovery_low_switch_final.md",
+  "latent_update_semantics": "per-step history update via phi(history) -> z_hat",
+  "phase": "adapt-v3-phase2-recovery-low-switch",
+  "policy_kind": "blind_adaptive_student",
+  "policy_name": "adapt_v3_dyn_only_phase2_recovery_low_switch_final",
+  "source_checkpoint": "/home/bhuvan/projects/rma/rma_go2_lab/rma_go2_lab/policies/adapt_v3_dyn_only_phase2_recovery_low_switch_final.pt",
+  "task": "RMA-Go2-Adapt-V3-DynOnly-Phase2-Recovery-LowSwitch"
+}

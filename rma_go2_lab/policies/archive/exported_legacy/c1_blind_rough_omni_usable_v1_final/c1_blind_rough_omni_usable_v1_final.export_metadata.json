@@ -1,0 +1,38 @@
+{
+  "phase": "C1-omni-usable-v1",
+  "policy_name": "c1_blind_rough_omni_usable_v1_final",
+  "runtime_contract": {
+    "deployable_observation_groups": [
+      "policy",
+      "policy_history"
+    ],
+    "latent_update_semantics": "",
+    "policy_kind": "blind_history_policy"
+  },
+  "source_checkpoint": "/home/bhuvan/projects/rma/rma_go2_lab/rma_go2_lab/policies/c1_blind_rough_omni_usable_v1_final.pt",
+  "task": "RMA-Go2-C1-Omni-Usable-V1-StageA",
+  "tensor_contract": {
+    "action_dim": 12,
+    "forward_signature": {
+      "inputs": {
+        "policy_history": [
+          "batch",
+          4800
+        ],
+        "policy_obs": [
+          "batch",
+          48
+        ]
+      },
+      "outputs": {
+        "action": [
+          "batch",
+          12
+        ]
+      }
+    },
+    "latent_dim": 0,
+    "policy_history_dim": 4800,
+    "policy_obs_dim": 48
+  }
+}

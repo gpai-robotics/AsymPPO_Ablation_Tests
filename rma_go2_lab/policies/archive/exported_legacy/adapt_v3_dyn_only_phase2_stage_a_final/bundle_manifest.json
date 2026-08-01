@@ -1,0 +1,20 @@
+{
+  "control_rate_hz": 50.0,
+  "deployable_observation_groups": [
+    "policy",
+    "policy_history"
+  ],
+  "exported_artifacts": [
+    "adapt_v3_dyn_only_phase2_stage_a_final.torchscript.pt",
+    "adapt_v3_dyn_only_phase2_stage_a_final.onnx",
+    "adapt_v3_dyn_only_phase2_stage_a_final.export_metadata.json",
+    "adapt_v3_dyn_only_phase2_stage_a_final.deploy_config.json"
+  ],
+  "freeze_note": "rma_go2_lab/policies/adapt_v3_dyn_only_phase2_stage_a_final.md",
+  "latent_update_semantics": "per-step history update via phi(history) -> z_hat",
+  "phase": "adapt-v3-phase2-stage-a",
+  "policy_kind": "blind_adaptive_student",
+  "policy_name": "adapt_v3_dyn_only_phase2_stage_a_final",
+  "source_checkpoint": "rma_go2_lab/policies/adapt_v3_dyn_only_phase2_stage_a_final.pt",
+  "task": "RMA-Go2-Adapt-V3-Phase2-StageA"
+}

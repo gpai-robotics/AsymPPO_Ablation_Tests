@@ -1,0 +1,21 @@
+{
+  "control_rate_hz": 50.0,
+  "deployable_observation_groups": [
+    "policy",
+    "policy_history"
+  ],
+  "exported_artifacts": [
+    "adapt_v3_dyn_only_structured_z27_phase2_phi_supervised_v1_candidate.torchscript.pt",
+    "adapt_v3_dyn_only_structured_z27_phase2_phi_supervised_v1_candidate.onnx",
+    "adapt_v3_dyn_only_structured_z27_phase2_phi_supervised_v1_candidate.export_metadata.json",
+    "adapt_v3_dyn_only_structured_z27_phase2_phi_supervised_v1_candidate.deploy_config.json",
+    "adapt_v3_dyn_only_structured_z27_phase2_phi_supervised_v1_candidate.deploy.yaml"
+  ],
+  "freeze_note": "Canonical working structured offline C2 baseline. Frozen after offline phi training beat the online PPO recovery recipe for pipeline stability.",
+  "latent_update_semantics": "per-step history update via phi(history) -> z_hat",
+  "phase": "adapt-v3-structured-offline-c2",
+  "policy_kind": "blind_adaptive_student",
+  "policy_name": "adapt_v3_dyn_only_structured_z27_phase2_phi_supervised_v1_candidate",
+  "source_checkpoint": "/home/bhuvan/projects/rma/rma_go2_lab/rma_go2_lab/policies/adapt_v3_dyn_only_structured_z27_phase2_phi_supervised_v1_candidate.pt",
+  "task": "RMA-Go2-Adapt-V3-DynOnly-StructuredZ27-Phase2-Recovery-LowSwitch"
+}

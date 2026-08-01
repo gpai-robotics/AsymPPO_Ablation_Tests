@@ -1,0 +1,97 @@
+__pycache__/
+*.pyc
+*.pyo
+*.pyd
+
+*.egg-info/
+build/
+dist/
+
+.venv/
+env/
+venv/
+
+.ipynb_checkpoints/
+.DS_Store
+
+# Generated experiment outputs
+outputs/
+logs/
+logs
+artifacts/evaluations/tmp/
+artifacts/evaluations/**/tmp/
+artifacts/evaluations/checkpoint_history_ablation/
+artifacts/evaluations/teacher_dependency_watch/
+artifacts/evaluations/privileged_teacher_v3/
+artifacts/evaluations/teacher_v*/
+artifacts/evaluations/adapt_v3_*/
+artifacts/evaluations/adaptation_student_*/
+artifacts/evaluations/archive/
+artifacts/evaluations/frozen_eval_matrix_manifest.json
+artifacts/evaluations/isolated_model_*.json
+artifacts/evaluations/legacy_raw/
+artifacts/evaluations/baseline1/
+artifacts/evaluations/baseline2/
+artifacts/evaluations/baseline3/
+artifacts/evaluations/flat_prior/
+artifacts/evaluations/clips/
+artifacts/figures/
+artifacts/mujoco_eval/
+artifacts/deploy_compat/
+artifacts/ood_evaluations/**/_tmp/
+artifacts/ood_evaluations/**/tmp/
+artifacts/ood_evaluations/adapt_v3_*/
+artifacts/ood_evaluations/adaptation_student_*/
+artifacts/ood_evaluations/archive/
+artifacts/ood_evaluations/baseline1/
+artifacts/ood_evaluations/baseline2/
+artifacts/ood_evaluations/baseline3/
+artifacts/ood_evaluations/clips/
+artifacts/ood_evaluations/privileged_teacher_v3/
+artifacts/ood_evaluations/teacher_v*/
+artifacts/debug/
+.codex
+
+# Training artifacts
+rma_go2_lab/policies/*.pt
+rma_go2_lab/policies/adapt_*_final.md
+rma_go2_lab/policies/adaptation_student*_final.md
+rma_go2_lab/policies/**/events.out.tfevents.*
+rma_go2_lab/policies/**/exported/
+rma_go2_lab/policies/**/git/*.diff
+
+# Large Local Dependencies
+reference_repos/
+rma_go2_lab/tools/
+*.pt.tmp
+*.log
+
+# Datasets
+*.npz
+
+# Models
+*.pt
+*.pth
+*.onnx
+
+# Videos
+*.mp4
+*.avi
+*.mov
+
+# Mujoco binaries
+*.mjb
+
+# Generated artifacts
+artifacts/
+outputs/
+logs/
+
+
+# Backup bundles
+*.bundle
+# Local public mirror / generated refresh tree
+public_repo_refresh/
+
+#
+MUJOCO_LOG.TXT

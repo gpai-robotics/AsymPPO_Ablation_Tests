@@ -1,0 +1,38 @@
+{
+  "phase": "adapt-v3-terrain-lite-phase2-stage-a",
+  "policy_name": "adapt_v3_terrain_lite_phase2_stage_a_candidate",
+  "runtime_contract": {
+    "deployable_observation_groups": [
+      "policy",
+      "policy_history"
+    ],
+    "latent_update_semantics": "per-step history update via phi(history) -> z_hat",
+    "policy_kind": "blind_adaptive_student"
+  },
+  "source_checkpoint": "/home/bhuvan/projects/rma/rma_go2_lab/rma_go2_lab/policies/adapt_v3_terrain_lite_phase2_stage_a_final.pt",
+  "task": "RMA-Go2-Adapt-V3-TerrainLite-Phase2-StageA",
+  "tensor_contract": {
+    "action_dim": 12,
+    "forward_signature": {
+      "inputs": {
+        "policy_history": [
+          "batch",
+          960
+        ],
+        "policy_obs": [
+          "batch",
+          48
+        ]
+      },
+      "outputs": {
+        "action": [
+          "batch",
+          12
+        ]
+      }
+    },
+    "latent_dim": 32,
+    "policy_history_dim": 960,
+    "policy_obs_dim": 48
+  }
+}

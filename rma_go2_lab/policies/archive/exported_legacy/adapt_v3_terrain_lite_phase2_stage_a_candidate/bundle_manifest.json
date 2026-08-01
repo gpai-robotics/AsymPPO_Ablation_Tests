@@ -1,0 +1,19 @@
+{
+  "control_rate_hz": 50.0,
+  "deployable_observation_groups": [
+    "policy",
+    "policy_history"
+  ],
+  "exported_artifacts": [
+    "adapt_v3_terrain_lite_phase2_stage_a_candidate.torchscript.pt",
+    "adapt_v3_terrain_lite_phase2_stage_a_candidate.export_metadata.json",
+    "adapt_v3_terrain_lite_phase2_stage_a_candidate.deploy_config.json"
+  ],
+  "freeze_note": "rma_go2_lab/policies/adapt_v3_terrain_lite_phase2_stage_a_final.md",
+  "latent_update_semantics": "per-step history update via phi(history) -> z_hat",
+  "phase": "adapt-v3-terrain-lite-phase2-stage-a",
+  "policy_kind": "blind_adaptive_student",
+  "policy_name": "adapt_v3_terrain_lite_phase2_stage_a_candidate",
+  "source_checkpoint": "/home/bhuvan/projects/rma/rma_go2_lab/rma_go2_lab/policies/adapt_v3_terrain_lite_phase2_stage_a_final.pt",
+  "task": "RMA-Go2-Adapt-V3-TerrainLite-Phase2-StageA"
+}

@@ -1,0 +1,38 @@
+{
+  "phase": "adapt-v3-phase2-recovery-low-switch-latent-reg",
+  "policy_name": "adapt_v3_dyn_only_phase2_recovery_low_switch_latent_reg_candidate",
+  "runtime_contract": {
+    "deployable_observation_groups": [
+      "policy",
+      "policy_history"
+    ],
+    "latent_update_semantics": "per-step history update via phi(history) -> z_hat",
+    "policy_kind": "blind_adaptive_student"
+  },
+  "source_checkpoint": "/home/bhuvan/tools/IsaacLab/logs/rsl_rl/go2_adapt_v3_phase2_recovery_low_switch_dyn_only_latent_reg/2026-05-04_15-25-43/model_220.pt",
+  "task": "RMA-Go2-Adapt-V3-DynOnly-Phase2-Recovery-LowSwitch-LatentReg",
+  "tensor_contract": {
+    "action_dim": 12,
+    "forward_signature": {
+      "inputs": {
+        "policy_history": [
+          "batch",
+          960
+        ],
+        "policy_obs": [
+          "batch",
+          48
+        ]
+      },
+      "outputs": {
+        "action": [
+          "batch",
+          12
+        ]
+      }
+    },
+    "latent_dim": 32,
+    "policy_history_dim": 960,
+    "policy_obs_dim": 48
+  }
+}

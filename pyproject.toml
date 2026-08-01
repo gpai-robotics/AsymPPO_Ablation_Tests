@@ -1,0 +1,14 @@
+[build-system]
+requires = ["setuptools>=64", "wheel"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "rma_go2_lab"
+version = "0.1.0"
+description = "Unitree Go2 IsaacLab locomotion research and deployment codebase"
+authors = [{name = "Bhuvan Lakhera"}]
+requires-python = ">=3.10"
+dependencies = []
+
+[tool.setuptools.packages.find]
+where = ["."]

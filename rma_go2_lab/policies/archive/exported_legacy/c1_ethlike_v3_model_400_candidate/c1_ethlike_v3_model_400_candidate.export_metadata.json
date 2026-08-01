@@ -1,0 +1,38 @@
+{
+  "phase": "c1-ethlike-v3-v4teacher300",
+  "policy_name": "c1_ethlike_v3_model_400_candidate",
+  "runtime_contract": {
+    "deployable_observation_groups": [
+      "policy",
+      "policy_history"
+    ],
+    "latent_update_semantics": "",
+    "policy_kind": "blind_history_policy"
+  },
+  "source_checkpoint": "/home/bhuvan/tools/IsaacLab/logs/rsl_rl/go2_c1_ethlike_v3_v4teacher300/2026-05-11_13-10-12/model_400.pt",
+  "task": "RMA-Go2-C1-ETHLike-V3-StageA",
+  "tensor_contract": {
+    "action_dim": 12,
+    "forward_signature": {
+      "inputs": {
+        "policy_history": [
+          "batch",
+          4800
+        ],
+        "policy_obs": [
+          "batch",
+          48
+        ]
+      },
+      "outputs": {
+        "action": [
+          "batch",
+          12
+        ]
+      }
+    },
+    "latent_dim": 0,
+    "policy_history_dim": 4800,
+    "policy_obs_dim": 48
+  }
+}

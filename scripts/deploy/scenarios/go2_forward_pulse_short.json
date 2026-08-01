@@ -1,0 +1,16 @@
+{
+  "name": "go2_forward_pulse_short",
+  "command": [0.0, 0.0, 0.0],
+  "command_schedule": [
+    {
+      "step": 25,
+      "label": "forward_on_short",
+      "command": [0.5, 0.0, 0.0]
+    },
+    {
+      "step": 75,
+      "label": "forward_off_short",
+      "command": [0.0, 0.0, 0.0]
+    }
+  ]
+}

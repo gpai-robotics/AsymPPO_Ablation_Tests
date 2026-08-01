@@ -1,0 +1,16 @@
+{
+  "checkpoint": "/home/bhuvan/projects/rma/rma_go2_lab/rma_go2_lab/policies/adapt_v3_dyn_only_phase2_recovery_low_switch_final.pt",
+  "generated_artifacts": [
+    "adapt_v3_dyn_only_phase2_recovery_low_switch_final.torchscript.pt",
+    "adapt_v3_dyn_only_phase2_recovery_low_switch_final.export_metadata.json",
+    "adapt_v3_dyn_only_phase2_recovery_low_switch_final.deploy_config.json"
+  ],
+  "note": "Export completed for the deployable dyn-only runtime contract.",
+  "phase": "adapt-v3-phase2-recovery-low-switch",
+  "policy_name": "adapt_v3_dyn_only_phase2_recovery_low_switch_final",
+  "requested_formats": [
+    "torchscript"
+  ],
+  "status": "completed",
+  "task": "RMA-Go2-Adapt-V3-DynOnly-Phase2-Recovery-LowSwitch"
+}

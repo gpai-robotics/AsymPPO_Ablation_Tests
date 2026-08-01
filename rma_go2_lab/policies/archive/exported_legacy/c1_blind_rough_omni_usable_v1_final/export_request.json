@@ -1,0 +1,20 @@
+{
+  "checkpoint": "/home/bhuvan/projects/rma/rma_go2_lab/rma_go2_lab/policies/c1_blind_rough_omni_usable_v1_final.pt",
+  "generated_artifacts": [
+    "c1_blind_rough_omni_usable_v1_final.torchscript.pt",
+    "c1_blind_rough_omni_usable_v1_final.onnx",
+    "c1_blind_rough_omni_usable_v1_final.export_metadata.json",
+    "c1_blind_rough_omni_usable_v1_final.deploy_config.json",
+    "c1_blind_rough_omni_usable_v1_final.deploy.yaml"
+  ],
+  "note": "Export completed for the blind_history_policy runtime contract.",
+  "phase": "C1-omni-usable-v1",
+  "policy_name": "c1_blind_rough_omni_usable_v1_final",
+  "requested_formats": [
+    "torchscript",
+    "onnx"
+  ],
+  "resolved_policy_history_length": 100,
+  "status": "completed",
+  "task": "RMA-Go2-C1-Omni-Usable-V1-StageA"
+}

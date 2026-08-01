@@ -1,0 +1,33 @@
+{
+  "phase": "blind-baseline2-warmstart",
+  "policy_name": "blind_baseline2_warmstart_candidate",
+  "runtime_contract": {
+    "deployable_observation_groups": [
+      "policy"
+    ],
+    "latent_update_semantics": "",
+    "policy_kind": "blind_fixed_policy"
+  },
+  "source_checkpoint": "/home/bhuvan/projects/rma/rma_go2_lab/rma_go2_lab/policies/blind_baseline2_warmstart_final.pt",
+  "task": "RMA-Go2-Blind-Baseline-Rough-WarmStart",
+  "tensor_contract": {
+    "action_dim": 12,
+    "forward_signature": {
+      "inputs": {
+        "policy_obs": [
+          "batch",
+          48
+        ]
+      },
+      "outputs": {
+        "action": [
+          "batch",
+          12
+        ]
+      }
+    },
+    "latent_dim": 0,
+    "policy_history_dim": 0,
+    "policy_obs_dim": 48
+  }
+}

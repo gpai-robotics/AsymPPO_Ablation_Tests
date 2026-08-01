@@ -1,0 +1,19 @@
+{
+  "checkpoint": "/home/bhuvan/tools/IsaacLab/logs/rsl_rl/go2_c1_ethlike_v1/2026-05-07_10-51-33/model_700.pt",
+  "generated_artifacts": [
+    "c1_ethlike_v1_model_700_candidate.torchscript.pt",
+    "c1_ethlike_v1_model_700_candidate.onnx",
+    "c1_ethlike_v1_model_700_candidate.export_metadata.json",
+    "c1_ethlike_v1_model_700_candidate.deploy_config.json",
+    "c1_ethlike_v1_model_700_candidate.deploy.yaml"
+  ],
+  "note": "Export completed for the blind_history_policy runtime contract.",
+  "phase": "c1-ethlike-v1",
+  "policy_name": "c1_ethlike_v1_model_700_candidate",
+  "requested_formats": [
+    "torchscript",
+    "onnx"
+  ],
+  "status": "completed",
+  "task": "RMA-Go2-C1-ETHLike-V1-StageA"
+}

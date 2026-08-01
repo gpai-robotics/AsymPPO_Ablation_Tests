@@ -1,0 +1,20 @@
+{
+  "checkpoint": "/home/bhuvan/projects/rma/rma_go2_lab/rma_go2_lab/policies/adapt_v3_dyn_only_structured_z27_phase2_phi_supervised_v1_candidate.pt",
+  "generated_artifacts": [
+    "adapt_v3_dyn_only_structured_z27_phase2_phi_supervised_v1_candidate.torchscript.pt",
+    "adapt_v3_dyn_only_structured_z27_phase2_phi_supervised_v1_candidate.onnx",
+    "adapt_v3_dyn_only_structured_z27_phase2_phi_supervised_v1_candidate.export_metadata.json",
+    "adapt_v3_dyn_only_structured_z27_phase2_phi_supervised_v1_candidate.deploy_config.json",
+    "adapt_v3_dyn_only_structured_z27_phase2_phi_supervised_v1_candidate.deploy.yaml"
+  ],
+  "note": "Export completed for the blind_adaptive_student runtime contract.",
+  "phase": "adapt-v3-structured-offline-c2",
+  "policy_name": "adapt_v3_dyn_only_structured_z27_phase2_phi_supervised_v1_candidate",
+  "requested_formats": [
+    "torchscript",
+    "onnx"
+  ],
+  "resolved_policy_history_length": 20,
+  "status": "completed",
+  "task": "RMA-Go2-Adapt-V3-DynOnly-StructuredZ27-Phase2-Recovery-LowSwitch"
+}

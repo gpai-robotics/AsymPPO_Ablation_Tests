@@ -1,0 +1,208 @@
+{
+  "profile_name": "go2_crosssim_validation_v1",
+  "policy": {
+    "task": "Go2-Blind-Rough-MJLAB-AsymPPO-V1",
+    "policy_dim": 45,
+    "history_length": 100,
+    "history_dim": 4500,
+    "history_layout": "isaaclab_term_major",
+    "joint_order": [
+      "FL_hip_joint",
+      "FR_hip_joint",
+      "RL_hip_joint",
+      "RR_hip_joint",
+      "FL_thigh_joint",
+      "FR_thigh_joint",
+      "RL_thigh_joint",
+      "RR_thigh_joint",
+      "FL_calf_joint",
+      "FR_calf_joint",
+      "RL_calf_joint",
+      "RR_calf_joint"
+    ],
+    "observation_order": [
+      "base_ang_vel",
+      "projected_gravity",
+      "velocity_commands",
+      "joint_pos_rel",
+      "joint_vel_rel",
+      "last_action"
+    ],
+    "observation_scales": "all_1.0",
+    "base_linear_velocity_in_actor": false,
+    "terrain_height_in_actor": false,
+    "action_scale": 0.25,
+    "action_offset": [0.1, -0.1, 0.1, -0.1, 0.8, 0.8, 1.0, 1.0, -1.5, -1.5, -1.5, -1.5]
+  },
+  "timing": {
+    "physics_dt_s": 0.005,
+    "control_dt_s": 0.02,
+    "physics_substeps_per_control": 4,
+    "control_rate_hz": 50.0
+  },
+  "nominal_robot": {
+    "spawn_height_m": 0.4,
+    "gravity_m_s2": [0.0, 0.0, -9.81],
+    "joint_stiffness_nm_rad": 25.0,
+    "joint_damping_nm_s_rad": 0.5,
+    "effort_limit_nm": 23.5,
+    "velocity_limit_rad_s": 30.0,
+    "passive_joint_damping": 0.0,
+    "passive_joint_frictionloss": 0.0,
+    "joint_armature": 0.0,
+    "ground_static_friction": 1.0,
+    "ground_dynamic_friction": 1.0,
+    "robot_static_friction": 1.0,
+    "robot_dynamic_friction": 1.0,
+    "restitution": 0.0
+  },
+  "matched_reset": {
+    "preset": "light",
+    "base_xy_uniform_m": [-0.02, 0.02],
+    "base_yaw_uniform_deg": [-6.0, 6.0],
+    "joint_position_uniform_rad": [-0.03, 0.03],
+    "joint_velocity_uniform_rad_s": [-0.1, 0.1],
+    "base_velocity": [0.0, 0.0, 0.0, 0.0, 0.0, 0.0],
+    "seed_base": 1000,
+    "rollouts_per_scenario": 5
+  },
+  "matched_hardware_gap": {
+    "observation_delay_control_steps": 1,
+    "action_delay_control_steps": 1,
+    "command_delay_control_steps": 1,
+    "encoder_bias_rad": 0.0,
+    "observation_noise": 0.0,
+    "observation_hold_probability": 0.0
+  },
+  "matched_scenarios": {
+    "max_steps": 1000,
+    "warmup_steps": 100,
+    "terrain_contract": {
+      "mode": "matched_flat",
+      "isaac": "plane",
+      "mujoco": "reference_repos/mujoco_menagerie/unitree_go2/scene.xml",
+      "geometry_equivalence": "backend_native_flat_surfaces",
+      "rough_terrain_policy": "backend_specific_not_directly_comparable"
+    },
+    "commands": {
+      "asym_forward": [0.5, 0.0, 0.0],
+      "asym_lateral_left": [0.25, 0.25, 0.0],
+      "asym_lateral_right": [0.25, -0.25, 0.0],
+      "asym_yaw_left": [0.3, 0.0, 0.35],
+      "asym_yaw_right": [0.3, 0.0, -0.35],
+      "asym_push_left": [0.4, 0.0, 0.0],
+      "asym_push_right": [0.4, 0.0, 0.0]
+    },
+    "push": {
+      "body": "base",
+      "frame": "world",
+      "start_control_step": 300,
+      "duration_control_steps": 10,
+      "left_force_n": [0.0, 50.0, 0.0],
+      "right_force_n": [0.0, -50.0, 0.0]
+    }
+  },
+  "comparison_gate": {
+    "require_identical_profile_hash": true,
+    "require_identical_scenario_hash": true,
+    "require_identical_seed_base": true,
+    "require_identical_rollout_count": true,
+    "require_identical_step_count": true,
+    "require_identical_reset_envelope": true,
+    "require_identical_delays": true,
+    "allow_backend_native_flat_geometry": true,
+    "allow_rough_terrain_direct_comparison": false
+  },
+  "isaac_backend": {
+    "engine": "PhysX",
+    "solver": "TGS",
+    "articulation_position_iterations": 4,
+    "articulation_velocity_iterations": 0,
+    "ccd": false,
+    "stabilization": false,
+    "self_collisions": false,
+    "max_depenetration_velocity_m_s": 1.0,
+    "friction_combine_mode": "multiply",
+    "restitution_combine_mode": "multiply",
+    "external_forces_every_solver_iteration_for_push_test": false
+  },
+  "mujoco_backend": {
+    "engine": "MuJoCo",
+    "version_audited": "3.8.0",
+    "model": "reference_repos/mujoco_menagerie/unitree_go2/scene.xml",
+    "integrator": "Euler",
+    "solver": "Newton",
+    "solver_iterations": 100,
+    "line_search_iterations": 50,
+    "friction_cone": "elliptic",
+    "impedance_ratio": 100.0,
+    "actuator_emulation": "isaac_dc_motor",
+    "runtime_overrides": {
+      "ground_friction": 1.0,
+      "foot_friction": 1.0,
+      "passive_joint_damping_scale": 1.0,
+      "passive_joint_frictionloss_scale": 1.0,
+      "passive_joint_armature_scale": 1.0
+    }
+  },
+  "training_distribution_isaac": {
+    "terrain": {
+      "patch_size_m": [8.0, 8.0],
+      "rows": 10,
+      "columns": 20,
+      "horizontal_scale_m": 0.1,
+      "vertical_scale_m": 0.005,
+      "max_initial_level": 2,
+      "random_rough_proportion": 0.2,
+      "random_rough_height_m": [0.01, 0.06],
+      "random_rough_step_m": 0.01,
+      "pyramid_slope_proportion": 0.1,
+      "pyramid_slope_range": [0.0, 0.4],
+      "inverted_pyramid_slope_proportion": 0.1,
+      "stairs_proportion": 0.0,
+      "boxes_proportion": 0.0
+    },
+    "commands": {
+      "initial_lin_x_m_s": [-0.1, 0.1],
+      "initial_lin_y_m_s": [-0.1, 0.1],
+      "initial_yaw_rad_s": [-0.1, 0.1],
+      "limit_lin_x_m_s": [-0.8, 0.8],
+      "limit_lin_y_m_s": [-0.3, 0.3],
+      "limit_yaw_rad_s": [-0.6, 0.6],
+      "standing_environment_fraction": 0.05
+    },
+    "domain_randomization": {
+      "static_friction": [0.1, 2.0],
+      "dynamic_friction": [0.1, 2.0],
+      "base_mass_addition_kg": [-2.0, 4.0],
+      "stiffness_scale": [0.6, 1.4],
+      "damping_scale": [0.6, 1.4],
+      "base_com_x_m": [-0.03, 0.03],
+      "base_com_y_m": [-0.03, 0.03],
+      "base_com_z_m": [-0.01, 0.01],
+      "push_interval_s": [6.0, 10.0],
+      "push_delta_v_x_m_s": [-0.35, 0.35],
+      "push_delta_v_y_m_s": [-0.35, 0.35],
+      "push_delta_yaw_rad_s": [-0.4, 0.4],
+      "encoder_bias": "disabled",
+      "sensor_delay": "disabled"
+    },
+    "actor_observation_noise_uniform": {
+      "base_ang_vel_rad_s": [-0.2, 0.2],
+      "projected_gravity": [-0.05, 0.05],
+      "joint_pos_rad": [-0.01, 0.01],
+      "joint_vel_rad_s": [-1.5, 1.5],
+      "commands": [0.0, 0.0],
+      "last_action": [0.0, 0.0]
+    },
+    "history_observation_noise": "disabled"
+  },
+  "non_equatable_backend_properties": [
+    "PhysX TGS and MuJoCo Newton solve contacts and constraints differently.",
+    "USD and MJCF collision geometry and inertial decomposition are different assets.",
+    "PhysX material combine modes do not map exactly to MuJoCo contact priority/solmix behavior.",
+    "PhysX contact offsets and MuJoCo margin/solimp/solref are not numerically interchangeable.",
+    "MuJoCo Menagerie passive joint damping, frictionloss, and armature are retained as backend-native plant properties; zeroing them destabilizes the policy and is not an actuator-equivalence correction.",
+    "GPU PhysX and CPU MuJoCo do not guarantee trajectory-level determinism from an identical seed."
+  ]
+}

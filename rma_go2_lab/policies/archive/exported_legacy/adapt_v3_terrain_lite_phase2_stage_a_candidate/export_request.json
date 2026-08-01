@@ -1,0 +1,16 @@
+{
+  "checkpoint": "/home/bhuvan/projects/rma/rma_go2_lab/rma_go2_lab/policies/adapt_v3_terrain_lite_phase2_stage_a_final.pt",
+  "generated_artifacts": [
+    "adapt_v3_terrain_lite_phase2_stage_a_candidate.torchscript.pt",
+    "adapt_v3_terrain_lite_phase2_stage_a_candidate.export_metadata.json",
+    "adapt_v3_terrain_lite_phase2_stage_a_candidate.deploy_config.json"
+  ],
+  "note": "Export completed for the deployable dyn-only runtime contract.",
+  "phase": "adapt-v3-terrain-lite-phase2-stage-a",
+  "policy_name": "adapt_v3_terrain_lite_phase2_stage_a_candidate",
+  "requested_formats": [
+    "torchscript"
+  ],
+  "status": "completed",
+  "task": "RMA-Go2-Adapt-V3-TerrainLite-Phase2-StageA"
+}

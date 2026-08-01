@@ -1,0 +1,18 @@
+{
+  "checkpoint": "/home/bhuvan/projects/rma/rma_go2_lab/rma_go2_lab/policies/adapt_v3_dyn_only_phase2_stage_a_final.pt",
+  "generated_artifacts": [
+    "adapt_v3_dyn_only_phase2_stage_a_final.torchscript.pt",
+    "adapt_v3_dyn_only_phase2_stage_a_final.onnx",
+    "adapt_v3_dyn_only_phase2_stage_a_final.export_metadata.json",
+    "adapt_v3_dyn_only_phase2_stage_a_final.deploy_config.json"
+  ],
+  "note": "Export completed for the deployable dyn-only runtime contract.",
+  "phase": "adapt-v3-phase2",
+  "policy_name": "adapt_v3_dyn_only_phase2_stage_a_final",
+  "requested_formats": [
+    "torchscript",
+    "onnx"
+  ],
+  "status": "completed",
+  "task": "RMA-Go2-Adapt-V3-Phase2-StageA"
+}

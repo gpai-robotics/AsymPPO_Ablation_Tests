@@ -1,0 +1,21 @@
+{
+  "control_rate_hz": 50.0,
+  "deployable_observation_groups": [
+    "policy",
+    "policy_history"
+  ],
+  "exported_artifacts": [
+    "c1_blind_rough_omni_usable_v1_final.torchscript.pt",
+    "c1_blind_rough_omni_usable_v1_final.onnx",
+    "c1_blind_rough_omni_usable_v1_final.export_metadata.json",
+    "c1_blind_rough_omni_usable_v1_final.deploy_config.json",
+    "c1_blind_rough_omni_usable_v1_final.deploy.yaml"
+  ],
+  "freeze_note": "Frozen deployable rough omni student selected from the usable-range omni line for deployment and sim2real study.",
+  "latent_update_semantics": "",
+  "phase": "C1-omni-usable-v1",
+  "policy_kind": "blind_history_policy",
+  "policy_name": "c1_blind_rough_omni_usable_v1_final",
+  "source_checkpoint": "/home/bhuvan/projects/rma/rma_go2_lab/rma_go2_lab/policies/c1_blind_rough_omni_usable_v1_final.pt",
+  "task": "RMA-Go2-C1-Omni-Usable-V1-StageA"
+}
