@@ -100,6 +100,18 @@ Report all ablations using this metric set for comparability, adding task-specif
 
 ---
 
+## 6. Velocity Range
+
+**Goal:** Determine performance of the pipeline in a range of velocities in all axes  
+
+**Configs Tested:** +-0.2 m/s from the baseline velocity range
+
+**Procedure**
+- Fix scenario across all velocity ranges for controlled comparison
+- Run each training velocity range under identical conditions
+
+**Metrics:** velocity tracking, success rate
+
 ## Reporting Template (per ablation)
 
 - Config diff (what changed)
