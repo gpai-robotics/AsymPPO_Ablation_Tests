@@ -17,7 +17,42 @@ Report all ablations using this metric set for comparability, adding task-specif
 
 ---
 
-## 1. Terrain Curriculum Consolidation
+## Checkpoint Validation Script
+
+The checkpoint validation entrypoint can be found at [Validation Tools](scripts/eval/ablation_eval.py)
+
+The script can be run using the following command :
+
+```bash
+bash $REPO/scripts/isaaclab_user.sh -p $REPO/scripts/eval/ablation_eval.py \
+  --task Go2-Blind-Rough-MJLAB-AsymPPO-V1 \
+  --checkpoint $ASYMPPO_CKPT \
+  --num_envs 16 \
+  --teleop-keyboard \
+```
+
+---
+
+## 1. Reward Design Ablation (Priority — highest novelty)
+
+**Goal:** Isolate the contribution of each new reward term.
+
+**New reward terms**
+- Hip joint deviation - 
+- Stable progress
+- Adaptive swing recovery
+- (Optional) Gait rewards, e.g. air time variance — to test redundancy of gait-phase generators
+
+**Procedure**
+1. Baseline: standard locomotion rewards only (no new terms) vs. full new reward set
+2. Leave-one-out: remove each new reward individually, compare against full set
+3. (Optional) Add/remove gait-phase reward to test whether it's redundant given the other new terms
+
+**Metrics:** full core metric set, per terrain/scenario
+
+---
+
+## 2. Terrain Curriculum Consolidation
 
 **Goal:** Test combining terrain curriculums into a single training run vs. separate runs, at reduced difficulty.
 
@@ -33,7 +68,7 @@ Report all ablations using this metric set for comparability, adding task-specif
 
 ---
 
-## 2. Domain Randomization Range
+## 3. Domain Randomization Range
 
 **Goal:** Validate DR ranges against literature and measure OOD robustness.
 
@@ -45,25 +80,6 @@ Report all ablations using this metric set for comparability, adding task-specif
 **Primary parameters:** friction (esp. low-friction regime), payload, COM shift
 
 **Metrics:** success rate, episode length, distance covered (+ core metrics above)
-
----
-
-## 3. Reward Design Ablation (Priority — highest novelty)
-
-**Goal:** Isolate the contribution of each new reward term.
-
-**New reward terms**
-- Hip joint deviation
-- Stable progress
-- Adaptive swing recovery
-- (Optional) Gait rewards, e.g. air time variance — to test redundancy of gait-phase generators
-
-**Procedure**
-1. Baseline: standard locomotion rewards only (no new terms) vs. full new reward set
-2. Leave-one-out: remove each new reward individually, compare against full set
-3. (Optional) Add/remove gait-phase reward to test whether it's redundant given the other new terms
-
-**Metrics:** full core metric set, per terrain/scenario
 
 ---
 

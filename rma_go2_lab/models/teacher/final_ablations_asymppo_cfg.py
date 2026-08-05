@@ -40,7 +40,7 @@ class Go2BlindRoughMjlabCombinedRoughRunnerCfg(RslRlOnPolicyRunnerCfg):
     num_steps_per_env = 32
     max_iterations = 3000
     save_interval = 50
-    experiment_name = "go2_blind_rough_combined_asymppo_rough_v1"
+    experiment_name = "go2_asymppo_ablations"
 
     obs_groups = {
         "policy": ["policy", "policy_history"],

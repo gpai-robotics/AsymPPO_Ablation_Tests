@@ -343,11 +343,13 @@ class Go2AsymPpoRoughBaseEnvCfg(UnitreeGo2RoughEnvCfg):
                 "velocity_threshold": 0.2,
             },
         )
+        
         self.rewards.hip_joint_deviation = RewTerm(
             func=base_mdp.joint_deviation_l1,
             weight=-0.1,
             params={"asset_cfg": SceneEntityCfg("robot", joint_names=".*_hip_joint")},
         )
+        
 
         # ---------------------------------------------------------------------
         # Optional stair-learning rewards (disabled by default)
@@ -355,7 +357,7 @@ class Go2AsymPpoRoughBaseEnvCfg(UnitreeGo2RoughEnvCfg):
 
         self.rewards.stable_progress = RewTerm(
             func=stable_progress,
-            weight=0.0,
+            weight=1.0,
             params={
                 "command_name": "base_velocity",
                 "asset_cfg": SceneEntityCfg("robot"),
@@ -364,7 +366,7 @@ class Go2AsymPpoRoughBaseEnvCfg(UnitreeGo2RoughEnvCfg):
 
         self.rewards.adaptive_swing_recovery = RewTerm(
             func=adaptive_swing_recovery,
-            weight=0.0,
+            weight=1.0,
             params={
                 "command_name": "base_velocity",
                 "asset_cfg": SceneEntityCfg("robot", body_names=".*_foot"),

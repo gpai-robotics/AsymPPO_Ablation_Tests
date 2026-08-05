@@ -76,15 +76,20 @@ class Go2BlindRoughMjlabCombinedRoughEnvCfg(Go2AsymPpoRoughOmniEnvCfg):
 
         terrain_gen = self.scene.terrain.terrain_generator
         self.scene.terrain.max_init_terrain_level = 2
-        terrain_gen.sub_terrains["random_rough"].proportion = 0.35
-        terrain_gen.sub_terrains["hf_pyramid_slope"].proportion = 0.15
-        terrain_gen.sub_terrains["hf_pyramid_slope_inv"].proportion = 0.15
-        terrain_gen.sub_terrains["pyramid_stairs"].proportion = 0.0
-        terrain_gen.sub_terrains["pyramid_stairs_inv"].proportion = 0.0
+        terrain_gen.sub_terrains["random_rough"].proportion = 0.00
+        terrain_gen.sub_terrains["hf_pyramid_slope"].proportion = 0.00
+        terrain_gen.sub_terrains["hf_pyramid_slope_inv"].proportion = 0.00
+        terrain_gen.sub_terrains["pyramid_stairs"].proportion = 0.5
+        terrain_gen.sub_terrains["pyramid_stairs_inv"].proportion = 0.5
         terrain_gen.sub_terrains["boxes"].proportion = 0.0
 
         self.rewards.track_lin_vel_xy_exp.weight = 2.0
         self.rewards.stable_progress.weight = 0.75
-        self.rewards.adaptive_swing_recovery.weight = 0.0
+        self.rewards.adaptive_swing_recovery.weight = 1.0
+        self.rewards.hip_joint_deviation = None
 
-        print("\n========== GO2 COMBINED ASYMPPO ROUGH V1 ==========\n")
+        print("\n========== GO2 ASYMPPO ABLATIONS ==========\n")
+        print("\n========== TERRAIN PROPORTIONS ==========")
+        for name, terrain in terrain_gen.sub_terrains.items():
+            print(f"{name:25s}: {terrain.proportion:.2f}")
+        print("=========================================\n")

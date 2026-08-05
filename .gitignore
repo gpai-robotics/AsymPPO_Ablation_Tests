@@ -53,7 +53,7 @@ artifacts/debug/
 .codex
 
 # Training artifacts
-rma_go2_lab/policies/*.pt
+rma_go2_lab/policies/
 rma_go2_lab/policies/adapt_*_final.md
 rma_go2_lab/policies/adaptation_student*_final.md
 rma_go2_lab/policies/**/events.out.tfevents.*
@@ -68,11 +68,6 @@ rma_go2_lab/tools/
 
 # Datasets
 *.npz
-
-# Models
-*.pt
-*.pth
-*.onnx
 
 # Videos
 *.mp4
